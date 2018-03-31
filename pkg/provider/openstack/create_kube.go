@@ -156,7 +156,7 @@ func (p *Provider) CreateKube(m *model.Kube, action *core.Action) error {
 			CIDR:           m.OpenStackConfig.PrivateSubnetRange,
 			IPVersion:      gophercloud.IPv4,
 			Name:           m.Name + "-subnet",
-			DNSNameservers: []string{"8.8.8.8"},
+			DNSNameservers: m.OpenStackConfig.DNSNameservers, //[]string{"8.8.8.8"},
 		}).Extract()
 		if err != nil {
 			return err

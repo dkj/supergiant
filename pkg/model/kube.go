@@ -133,6 +133,7 @@ type OSKubeConfig struct {
 	NodeSecurityGroupID   string `json:"node_security_group_id" sg:"readonly"`
 	KeyPair               string `json:"key_pair" sg:"readonly"`
 	SSHPubKey             string `json:"ssh_pub_key" validate:"nonzero"`
+	DNSNameservers        []string `json:"dns_nameservers"` // sg:"default=[\"8.8.4.4\"]"`
 }
 
 // GCEKubeConfig holds do specific information about DO based KUbernetes clusters.
